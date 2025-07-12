@@ -1,0 +1,308 @@
+/* Importar la tipografía Roboto Mono */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Reaplicar la tipografía Roboto Mono */
+html, body {
+  font-family: 'Roboto Mono', monospace !important; /* Usar !important para evitar sobrescritura */
+}
+
+/* Estilos para el Home */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+.home {
+  background: linear-gradient(180deg, #000000, #000011); /* Fondo oscuro con degradado suave */
+  color: #ffffff;
+  min-height: 100vh;
+  width: 100%; /* Asegurar que el fondo ocupe toda la página */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: flex-start; /* Asegurar que el contenido comience desde arriba */
+  text-align: center;
+  padding: 80px 20px 20px; /* Mantener un margen con el header */
+  position: relative;
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box; /* Asegurar que el margen se mantenga al hacer scroll */
+  overflow: hidden; /* Asegurar que las animaciones no se desborden */
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 100%);
+  animation: pulse 5s infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+.home-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 0;
+  /* Centrar horizontalmente el contenedor general */
+  box-sizing: border-box;
+}
+
+.profile-container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 320px;
+  max-width: 400px;
+  flex: 1 1 350px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  text-align: left;
+  min-width: 320px;
+  max-width: 600px;
+  flex: 2 1 500px;
+}
+
+@media (max-width: 900px) {
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .profile-container, .about {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinear hacia la izquierda */
+  gap: 10px; /* Reducir espacio entre elementos */
+}
+
+.profile-picture {
+  width: 60px; /* Reducir tamaño de la imagen de perfil */
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #00d4ff;
+}
+
+.large-profile-picture {
+  width: 160px;
+  height: 160px;
+}
+
+.profile-text {
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.profile h1 {
+  font-size: 1.8rem; /* Reducir tamaño del título principal */
+  font-weight: bold;
+  background: linear-gradient(90deg, #00d4ff, #ffffff, #00d4ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-text-left-to-right 2s infinite linear;
+  margin-bottom: 5px; /* Reducir margen inferior del título principal */
+}
+
+.profile p {
+  font-size: 1rem; /* Reducir tamaño del texto de presentación */
+  max-width: 600px;
+  line-height: 1.8;
+  color: #ffffff; /* Mantener el color blanco para el texto */
+  margin-top: 0; /* Eliminar margen superior del texto de presentación */
+}
+
+/* Estilos mejorados para el botón de Descargar CV */
+.cv-button {
+  background-color: transparent;
+  color: #00d4ff;
+  border: 2px solid #00d4ff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #00d4ff;
+  color: #ffffff;
+  box-shadow: 0 0 10px #00d4ff;
+}
+
+.about h2 {
+  font-size: 1.5rem; /* Reducir tamaño de los títulos en la sección About */
+  font-weight: bold;
+  color: #00d4ff; /* Color distintivo para títulos */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el logo y el texto */
+  margin-bottom: 10px; /* Reducir margen inferior de los títulos en la sección About */
+}
+
+.about p {
+  font-size: 0.9rem; /* Reducir tamaño de los textos en la sección About */
+  color: #ffffff; /* Color blanco para textos */
+  line-height: 1.8; /* Mejorar la legibilidad */
+  margin-top: 5px; /* Reducir margen superior de los textos en la sección About */
+  margin-bottom: 10px; /* Añadir margen inferior para separar párrafos */
+}
+
+.about h3 {
+  font-size: 1.3rem; /* Reducir tamaño de los subtítulos en la sección About */
+  font-weight: bold;
+  color: #00d4ff; /* Color distintivo para subtítulos */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el logo y el texto */
+  margin-bottom: 10px; /* Reducir margen inferior de los subtítulos en la sección About */
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about ul li {
+  font-size: 0.9rem; /* Reducir tamaño de los textos en la lista de estudios */
+  color: #ffffff; /* Color blanco para textos */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el logo y el texto */
+  margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+  margin-top: 5px; /* Reducir margen superior de los textos en la lista de estudios */
+}
+
+.about-logo,
+.studies-logo,
+.institution-logo {
+  width: 56px;
+  height: auto;
+  /* Elimino sombra, borde y fondo extra */
+  filter: none;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.about-logo:hover,
+.studies-logo:hover,
+.institution-logo:hover {
+  filter: none;
+  box-shadow: none;
+}
+
+/* Aplicar la tipografía directamente a los elementos */
+.profile h1, .profile p, .about h2, .about p, .about h3, .about ul li {
+  font-family: 'Roboto Mono', monospace !important; /* Forzar la aplicación de la fuente */
+}
+
+/* Animación más notoria de izquierda a derecha para el título */
+@keyframes gradient-text-left-to-right {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Estilos para las acciones del perfil */
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cv-button::after {
+  content: '📥';
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.cv-section {
+  display: flex;
+  flex-direction: column; /* Cambia de row a column */
+  align-items: flex-start; /* Alinea a la izquierda */
+  gap: 10px; /* Espacio entre el botón, social links y correo */
+}
+
+.cv-section p {
+  margin-top: 10px;
+  text-align: left;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px; /* Más espacio entre iconos */
+  margin-top: 8px; /* Espacio superior para separar del botón */
+  margin-bottom: 4px; /* Espacio inferior para separar del correo */
+}
+
+.linkedin,
+.github {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: transform 0.2s;
+  margin: 0 2px;
+}
+
+.linkedin:hover,
+.github:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+.social-icon {
+  width: 50px; /* Ajustar tamaño uniforme para los iconos */
+  height: 50px;
+}
+
+.email-section {
+  display: none; /* Eliminar el botón de copiar correo */
+}
+
+.email-text {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
