@@ -48,7 +48,39 @@ const Home = () => {
                 </li>
             </ul>
             </div>
+            </div> {/* cierre de home-content */}
+      <div className="projects-section">
+        <h2>
+          <span role="img" aria-label="Proyectos" style={{marginRight: '8px'}}>💻</span> Mis Proyectos
+        </h2>
+        <div className="projects-list">
+          <div className="project-card">
+            <div className="project-icon">🎬</div>
+            <div>
+              <h3>Cinematrix</h3>
+              <p>Aplicación de gestión personalizada de películas desarrollada con Java, Spring Boot, Hibernate y JPA en el backend, y JavaScript + React en el frontend. Utiliza APIs externas para obtener información de películas, actores y directores, e implementa un algoritmo propio de recomendaciones personalizadas según las interacciones del usuario.</p>
+              <div className="project-video-centered">
+                <div className="project-video">
+                  <iframe width="360" height="203" src="https://www.youtube.com/embed/BPJui4inpik" title="Demo Cinematrix" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                </div>
+                <div className="project-links project-links-centered">
+                  <a href="https://github.com/FernandoIglesiasIglesias/Java-Web-Application-for-personalized-movie-management" target="_blank" rel="noopener noreferrer" className="project-link-btn">Repositorio en GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-icon">💼</div>
+            <div>
+              <h3>Portafolio personal</h3>
+              <p>Mi sitio web profesional donde muestro mis proyectos, habilidades y experiencia como ingeniero de software.</p>
+              <div className="project-links project-links-centered">
+                <a href="https://github.com/FernandoIglesiasIglesias/myportfolio" target="_blank" rel="noopener noreferrer" className="project-link-btn">Repositorio en GitHub</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
   );
 };
