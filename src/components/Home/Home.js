@@ -53,13 +53,13 @@ const Home = () => {
       if (char <= TYPED_TEXTS[line].length) {
         current[line] = TYPED_TEXTS[line].slice(0, char);
         setTyped([ ...current ]);
-        timeouts.push(setTimeout(() => typeLine(line), 1)); // velocidad aún más rápida
+        timeouts.push(setTimeout(() => typeLine(line), 60)); // velocidad más lenta
         char++;
       } else if (line === 0) {
         char = 0;
-        setTimeout(() => typeLine(1), 30); // transición más rápida
+        setTimeout(() => typeLine(1), 200); // transición más lenta
       } else {
-        setTimeout(() => setTypingDone(true), 30); // aparición más rápida
+        setTimeout(() => setTypingDone(true), 200); // aparición más lenta
       }
     }
     typeLine(0);
