@@ -1,10 +1,69 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
+function useScrollReveal(selector, className = 'scroll-reveal') {
+  useEffect(() => {
+    const elements = document.querySelectorAll(selector);
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach(el => el.classList.add(className));
+      return;
+    }
+    const observer = new window.IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(className);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    elements.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, [selector, className]);
+}
+const TYPED_TEXTS = [
+  'Fernando Iglesias Iglesias',
+  '¡Hola! No soy una IA, soy un desarrollador Full Stack.'
+];
 
 const Home = () => {
+  const [typed, setTyped] = useState(['', '']);
+  const [typingDone, setTypingDone] = useState(false);
+
   useEffect(() => {
     document.body.classList.add('page-fade-in');
     return () => document.body.classList.remove('page-fade-in');
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.add('page-fade-in');
+    return () => document.body.classList.remove('page-fade-in');
+  }, []);
+
+  useScrollReveal('.project-card', 'scroll-reveal');
+  useScrollReveal('.skills-group', 'scroll-reveal');
+
+  useEffect(() => {
+    let char = 0;
+    const current = ['', ''];
+    const timeouts = [];
+
+    function typeLine(line) {
+      if (char <= TYPED_TEXTS[line].length) {
+        current[line] = TYPED_TEXTS[line].slice(0, char);
+        setTyped([ ...current ]);
+        timeouts.push(setTimeout(() => typeLine(line), 1)); // velocidad aún más rápida
+        char++;
+      } else if (line === 0) {
+        char = 0;
+        setTimeout(() => typeLine(1), 30); // transición más rápida
+      } else {
+        setTimeout(() => setTypingDone(true), 30); // aparición más rápida
+      }
+    }
+    typeLine(0);
+    return () => timeouts.forEach(clearTimeout);
   }, []);
 
   return (
@@ -16,10 +75,16 @@ const Home = () => {
                   <img src="/foto_personal.jpeg" alt="Foto de perfil" className="profile-picture large-profile-picture" />
                 </div>
                 <div className="profile-text">
-                <h1>Fernando Iglesias Iglesias</h1>
-                <p>¡Hola! No soy una IA, soy un desarrollador Full Stack.</p>
+                  <h1>
+                    {typed[0]}
+                    {(!typingDone && typed[0].length === TYPED_TEXTS[0].length) ? null : (!typingDone && (typed[0].length < TYPED_TEXTS[0].length)) ? <span className="typed-cursor">|</span> : null}
+                  </h1>
+                  <p>
+                    {typed[1]}
+                    {!typingDone && typed[0].length === TYPED_TEXTS[0].length && <span className="typed-cursor">|</span>}
+                  </p>
                 </div>
-                <div className="profile-actions">
+                <div className="profile-actions" style={{ opacity: typingDone ? 1 : 0, transition: 'opacity 0.6s 0.1s' }}>
                 <div className="cv-section">
                     <button className="cv-button" onClick={() => window.open('/cv.pdf', '_blank')}>Descargar CV</button>
                     <div className="social-links">
@@ -52,7 +117,7 @@ const Home = () => {
                 </div>
             </div>
             </div>
-            <div className="about">
+            <div className="about" style={{ opacity: typingDone ? 1 : 0, transition: 'opacity 0.6s 0.3s' }}>
             <h2>
                 <img src="/sobre_mi.png" alt="Logo significativo" className="about-logo" /> Sobre mí
             </h2>
@@ -71,8 +136,17 @@ const Home = () => {
             </ul>
             </div>
             </div> {/* cierre de home-content */}
-      <div className="projects-section">
-        <h2>
+      <div
+        className="projects-section"
+        style={{
+          opacity: typingDone ? 1 : 0,
+          transition: 'opacity 0.6s 0.5s',
+          display: typingDone ? 'flex' : 'none',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <h2 style={{justifyContent: 'flex-start', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px'}}>
           <span role="img" aria-label="Proyectos" style={{marginRight: '8px'}}>💻</span> Mis Proyectos
         </h2>
         <div className="projects-list">
@@ -103,8 +177,16 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* Sección de habilidades debajo de proyectos */}
-      <div className="skills-section">
+      <div
+        className="skills-section"
+        style={{
+          opacity: typingDone ? 1 : 0,
+          transition: 'opacity 0.6s 0.7s',
+          display: typingDone ? 'flex' : 'none',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <h2 style={{justifyContent: 'flex-start', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px'}}>
           <span className="skills-logo" role="img" aria-label="Habilidades" style={{marginRight: '8px', fontWeight: 'bold', fontSize: '1.5em'}}>&lt;/&gt;</span> Habilidades
         </h2>

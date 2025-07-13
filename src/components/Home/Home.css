@@ -1,29 +1,34 @@
-/* Importar la tipografía Roboto Mono */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
-/* Reaplicar la tipografía Roboto Mono */
-html, body {
-  font-family: 'Roboto Mono', monospace !important; /* Usar !important para evitar sobrescritura */
+.scroll-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity 0.8s cubic-bezier(.23,1.01,.32,1), transform 0.8s cubic-bezier(.23,1.01,.32,1);
 }
-
-/* Estilos para el Home */
+.project-card, .skills-group {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.8s cubic-bezier(.23,1.01,.32,1), transform 0.8s cubic-bezier(.23,1.01,.32,1);
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+html, body {
+  font-family: 'Roboto Mono', monospace !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 .home {
-  background: linear-gradient(180deg, #000000, #000011); /* Fondo oscuro con degradado suave */
+  background: linear-gradient(180deg, #000000, #000011);
   color: #ffffff;
   min-height: 100vh;
-  width: 100%; /* Asegurar que el fondo ocupe toda la página */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar horizontalmente */
-  justify-content: flex-start; /* Asegurar que el contenido comience desde arriba */
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
-  padding: 80px 20px 20px; /* Mantener un margen con el header */
+  padding: 80px 20px 20px;
   position: relative;
   font-family: 'Roboto Mono', monospace;
-  box-sizing: border-box; /* Asegurar que el margen se mantenga al hacer scroll */
-  overflow: hidden; /* Asegurar que las animaciones no se desborden */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .home::before {
@@ -64,7 +69,6 @@ html, body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 32px 0;
-  /* Centrar horizontalmente el contenedor general */
   box-sizing: border-box;
 }
 
@@ -243,8 +247,8 @@ html, body {
 .profile {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinear hacia la izquierda */
-  gap: 10px; /* Reducir espacio entre elementos */
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .profile-picture-wrapper {
@@ -252,7 +256,6 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* El wrapper NO debe modificar el tamaño de la imagen */
   width: auto;
   height: auto;
 }
@@ -295,29 +298,27 @@ html, body {
 }
 
 .profile-text {
-  text-align: left; /* Alinear el texto a la izquierda */
+  text-align: left;
 }
 
 .profile h1 {
-  font-size: 1.8rem; /* Reducir tamaño del título principal */
+  font-size: 1.8rem;
   font-weight: bold;
   background: linear-gradient(90deg, #00d4ff, #ffffff, #00d4ff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   animation: gradient-text-left-to-right 2s infinite linear;
-  margin-bottom: 5px; /* Reducir margen inferior del título principal */
+  margin-bottom: 5px;
 }
 
 .profile p {
-  font-size: 1rem; /* Reducir tamaño del texto de presentación */
-  max-width: 600px;
+  font-size: 1rem;
   line-height: 1.8;
-  color: #ffffff; /* Mantener el color blanco para el texto */
-  margin-top: 0; /* Eliminar margen superior del texto de presentación */
+  color: #ffffff; 
+  margin-top: 0; 
 }
 
-/* Estilos mejorados para el botón de Descargar CV */
 .cv-button {
   background: #00d4ff;
   color: #001a2e;
@@ -355,31 +356,31 @@ html, body {
 }
 
 .about h2 {
-  font-size: 1.5rem; /* Reducir tamaño de los títulos en la sección About */
+  font-size: 1.5rem; 
   font-weight: bold;
-  color: #00d4ff; /* Color distintivo para títulos */
+  color: #00d4ff; 
   display: flex;
   align-items: center;
-  gap: 10px; /* Espacio entre el logo y el texto */
-  margin-bottom: 10px; /* Reducir margen inferior de los títulos en la sección About */
+  gap: 10px;
+  margin-bottom: 10px; 
 }
 
 .about p {
-  font-size: 0.9rem; /* Reducir tamaño de los textos en la sección About */
-  color: #ffffff; /* Color blanco para textos */
-  line-height: 1.8; /* Mejorar la legibilidad */
-  margin-top: 5px; /* Reducir margen superior de los textos en la sección About */
-  margin-bottom: 10px; /* Añadir margen inferior para separar párrafos */
+  font-size: 0.9rem;
+  color: #ffffff; 
+  line-height: 1.8; 
+  margin-top: 5px; 
+  margin-bottom: 10px; 
 }
 
 .about h3 {
-  font-size: 1.3rem; /* Reducir tamaño de los subtítulos en la sección About */
+  font-size: 1.3rem; 
   font-weight: bold;
-  color: #00d4ff; /* Color distintivo para subtítulos */
+  color: #00d4ff;
   display: flex;
   align-items: center;
-  gap: 10px; /* Espacio entre el logo y el texto */
-  margin-bottom: 10px; /* Reducir margen inferior de los subtítulos en la sección About */
+  gap: 10px; 
+  margin-bottom: 10px;
 }
 
 .about ul {
@@ -389,13 +390,13 @@ html, body {
 }
 
 .about ul li {
-  font-size: 0.9rem; /* Reducir tamaño de los textos en la lista de estudios */
-  color: #ffffff; /* Color blanco para textos */
+  font-size: 0.9rem;
+  color: #ffffff; 
   display: flex;
   align-items: center;
-  gap: 10px; /* Espacio entre el logo y el texto */
-  margin-bottom: 10px; /* Espaciado entre elementos de la lista */
-  margin-top: 5px; /* Reducir margen superior de los textos en la lista de estudios */
+  gap: 10px;
+  margin-bottom: 10px; 
+  margin-top: 5px;
 }
 
 .about-logo,
@@ -403,7 +404,6 @@ html, body {
 .institution-logo {
   width: 56px;
   height: auto;
-  /* Elimino sombra, borde y fondo extra */
   filter: none;
   background: none;
   border-radius: 0;
@@ -423,12 +423,10 @@ html, body {
   margin-left: 10px;
 }
 
-/* Aplicar la tipografía directamente a los elementos */
 .profile h1, .profile p, .about h2, .about p, .about h3, .about ul li {
-  font-family: 'Roboto Mono', monospace !important; /* Forzar la aplicación de la fuente */
+  font-family: 'Roboto Mono', monospace !important; 
 }
 
-/* Animación más notoria de izquierda a derecha para el título */
 @keyframes gradient-text-left-to-right {
   0% {
     background-position: 0% 50%;
@@ -438,7 +436,6 @@ html, body {
   }
 }
 
-/* Estilos para las acciones del perfil */
 .profile-actions {
   display: flex;
   flex-direction: column;
@@ -454,9 +451,9 @@ html, body {
 
 .cv-section {
   display: flex;
-  flex-direction: column; /* Cambia de row a column */
-  align-items: flex-start; /* Alinear a la izquierda en escritorio */
-  text-align: left; /* Alinear texto a la izquierda en escritorio */
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;
   gap: 10px;
   width: 100%;
 }
@@ -470,9 +467,9 @@ html, body {
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 18px; /* Más espacio entre iconos */
-  margin-top: 8px; /* Espacio superior para separar del botón */
-  margin-bottom: 4px; /* Espacio inferior para separar del correo */
+  gap: 18px;
+  margin-top: 8px;
+  margin-bottom: 4px; 
 }
 
 .linkedin,
@@ -491,12 +488,12 @@ html, body {
 }
 
 .social-icon {
-  width: 50px; /* Ajustar tamaño uniforme para los iconos */
+  width: 50px;
   height: 50px;
 }
 
 .email-section {
-  display: none; /* Eliminar el botón de copiar correo */
+  display: none; 
 }
 
 .email-text {
@@ -505,7 +502,7 @@ html, body {
   color: #333;
 }
 
-.projects-section {
+.projects-section, .skills-section {
   margin-top: 48px;
   width: 100%;
   max-width: 1100px;
@@ -516,16 +513,23 @@ html, body {
   box-shadow: 0 2px 16px 0 rgba(0, 212, 255, 0.08);
   padding: 32px 24px 24px 24px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.projects-section h2 {
+.projects-section h2, .skills-section h2 {
   font-size: 1.5rem;
   color: #00d4ff;
   display: flex;
   align-items: center;
   gap: 10px;
   font-family: 'Roboto Mono', monospace;
-  margin-bottom: 18px;
+  margin-bottom: 28px;
+  margin-top: 0;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 .projects-list {
@@ -643,11 +647,11 @@ html, body {
   }
 }
 @media (max-width: 600px) {
-  .projects-section {
+  .projects-section, .skills-section {
     padding: 20px 4vw 16px 4vw;
     border-radius: 10px;
   }
-  .projects-section h2 {
+  .projects-section h2, .skills-section h2 {
     font-size: 1.1rem;
     gap: 6px;
   }
@@ -968,5 +972,19 @@ html, body {
 .skill-badge:hover::after {
   opacity: 1;
   animation: badgeShine 0.7s linear;
+}
+
+.typed-cursor {
+  display: inline-block;
+  width: 1ch;
+  color: #00d4ff;
+  font-weight: bold;
+  animation: blink-cursor 1s steps(1) infinite;
+  font-size: 1.1em;
+  margin-left: 2px;
+}
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
