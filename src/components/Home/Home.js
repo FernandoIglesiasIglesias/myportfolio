@@ -53,7 +53,7 @@ const Home = () => {
       if (char <= TYPED_TEXTS[line].length) {
         current[line] = TYPED_TEXTS[line].slice(0, char);
         setTyped([ ...current ]);
-        timeouts.push(setTimeout(() => typeLine(line), 45)); 
+        timeouts.push(setTimeout(() => typeLine(line), 40)); 
         char++;
       } else if (line === 0) {
         char = 0;
