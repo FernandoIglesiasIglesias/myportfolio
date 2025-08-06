@@ -239,6 +239,40 @@ const Home = () => {
         </ul>
       </div>
 
+      <div
+        className="certificates-section"
+        style={{
+          opacity: typingDone ? 1 : 0,
+          transition: 'opacity 0.6s 0.9s',
+          display: typingDone ? 'flex' : 'none',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <h2>
+          <span className="certificates-logo" role="img" aria-label="Certificados">📄</span> Certificados
+        </h2>
+        <ul className="certificates-list" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0, margin: 0 }}>
+          <li className="certificate-card" style={{ display: 'flex', alignItems: 'center', gap: '18px', background: 'rgba(0, 0, 30, 0.85)', borderRadius: '12px', boxShadow: '0 2px 8px 0 rgba(0, 212, 255, 0.08)', padding: '18px 20px', transition: 'transform 0.18s, box-shadow 0.18s', fontSize: '1rem', color: '#fff', maxWidth: '600px', width: '100%', justifyContent: 'center' }}>
+            <div className="certificate-icon" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <img src="/scrum.png" alt="Scrum" className="certificate-img" style={{width: '56px', height: '56px', objectFit: 'contain', borderRadius: '8px', background: 'white', padding: '4px'}} />
+            </div>
+            <div style={{textAlign: 'left'}}>
+              <h3 className="certificate-name">Scrum Fundamentals Certified (SFC)</h3>
+              <p className="certificate-desc">Certificación oficial en fundamentos de Scrum otorgada por SCRUMstudy.</p>
+              <div className="certificate-links">
+                <a
+                  href="https://c46e136a583f7e334124-ac22991740ab4ff17e21daf2ed577041.ssl.cf1.rackcdn.com/Certificate/ScrumFundamentalsCertified-FernandoIglesiasIglesias-1095889.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="certificate-link-btn"
+                >Ver certificado</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
     </section>
   );
 };
