@@ -121,8 +121,9 @@ const Home = () => {
             <h2>
                 <img src="/sobre_mi.png" alt="Logo significativo" className="about-logo" /> Sobre mí
             </h2>
-            <p>Soy un ingeniero de software con ganas y entusiasmo de comenzar mi carrera laboral, aprender, con ímpetu, con capacidades sociales y muchas ganas de crecer profesionalmente.</p>
-            <p>Además de mi formación técnica, destaco por mi capacidad de trabajo en equipo, comunicación y adaptación a nuevos entornos. Me apasiona la tecnología, el desarrollo web y la resolución de problemas complejos. Busco aportar valor en proyectos innovadores y seguir creciendo tanto a nivel profesional como personal y académico.</p>
+            <p>Soy un ingeniero de software, desarrollador backend y frontend con sólida experiencia en Java y JavaScript utilizando además Spring Boot y React. Me apasiona construir soluciones eficientes y escalables, priorizando la calidad del código mediante herramientas como SonarQube y JUnit, y aplicando buenas prácticas de desarrollo ágil (Scrum, Git).</p>
+            <p>He participado en proyectos académicos y personales donde integré bases de datos relacionales, control de versiones y despliegue continuo, siempre enfocado en mejorar el rendimiento y la mantenibilidad del software.</p>
+            <p>Disfruto aprendiendo nuevas tecnologías y aportando valor en equipos colaborativos, buscando la excelencia en cada etapa del desarrollo.</p>
             <h3>
                 <img src="/estudios.png" alt="Logo estudios" className="studies-logo" /> Estudios
             </h3>
@@ -253,9 +254,9 @@ const Home = () => {
           <span className="certificates-logo" role="img" aria-label="Certificados">📄</span> Certificados
         </h2>
         <ul className="certificates-list" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0, margin: 0 }}>
-          <li className="certificate-card" style={{ display: 'flex', alignItems: 'center', gap: '18px', background: 'rgba(0, 0, 30, 0.85)', borderRadius: '12px', boxShadow: '0 2px 8px 0 rgba(0, 212, 255, 0.08)', padding: '18px 20px', transition: 'transform 0.18s, box-shadow 0.18s', fontSize: '1rem', color: '#fff', maxWidth: '600px', width: '100%', justifyContent: 'center' }}>
+          <li className="certificate-card">
             <div className="certificate-icon" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img src="/scrum.png" alt="Scrum" className="certificate-img" style={{width: '56px', height: '56px', objectFit: 'contain', borderRadius: '8px', background: 'white', padding: '4px'}} />
+              <img src="/scrum.png" alt="Scrum" className="certificate-img" />
             </div>
             <div style={{textAlign: 'left'}}>
               <h3 className="certificate-name">Scrum Fundamentals Certified (SFC)</h3>
